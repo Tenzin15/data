@@ -10,7 +10,7 @@ public class BarChartExample extends ApplicationFrame {
       JFreeChart barChart = ChartFactory.createBarChart(
          chartTitle,           
          "Category",  //x-axis label        
-         "Score",     //y-axis label
+         "Rating",     //y-axis label
          createDataset(),          
          PlotOrientation.VERTICAL,           
          true, true, false);
@@ -21,36 +21,43 @@ public class BarChartExample extends ApplicationFrame {
    }
    
    private CategoryDataset createDataset( ) {
-      final String fiat = "FIAT";        
-      final String audi = "AUDI";        
-      final String ford = "FORD";        
-      final String speed = "Speed";        
-      final String millage = "Millage";        
-      final String userrating = "User Rating";        
-      final String safety = "safety";        
+      final String kona = "Kona";        
+      final String sidamo = "Sidamo";        
+      final String limu = "Limu";
+      final String sul = "Sul De Minas";      
+      final String marmelade = "Marmelade";
+
+      final String flavor = "Flavor";        
+      final String aroma = "Aroma";        
+      final String sweetness = "Sweeteness";               
       final DefaultCategoryDataset dataset =    new DefaultCategoryDataset( );  
 
-      dataset.addValue( 1.0 , fiat , speed );        
-      dataset.addValue( 3.0 , fiat , userrating );        
-      dataset.addValue( 5.0 , fiat , millage ); 
-      dataset.addValue( 5.0 , fiat , safety );           
+      dataset.addValue( 8.17 , kona , flavor );        
+      dataset.addValue( 7.875 , kona , aroma );        
+      dataset.addValue( 10.0 , kona , sweetness ); 
 
-      dataset.addValue( 5.0 , audi , speed );        
-      dataset.addValue( 6.0 , audi , userrating );       
-      dataset.addValue( 10.0 , audi , millage );        
-      dataset.addValue( 4.0 , audi , safety );
+      dataset.addValue( 7.91 , sidamo , flavor );        
+      dataset.addValue( 7.625 , sidamo , aroma );       
+      dataset.addValue( 10.0 , sidamo , sweetness );        
 
-      dataset.addValue( 4.0 , ford , speed );        
-      dataset.addValue( 2.0 , ford , userrating );        
-      dataset.addValue( 3.0 , ford , millage );        
-      dataset.addValue( 6.0 , ford , safety );               
+      dataset.addValue( 7.92 , sul , flavor );        
+      dataset.addValue( 8.295 , sul , aroma );        
+      dataset.addValue( 10.0 , sul , sweetness );        
+   
+      dataset.addValue( 6.75 , marmelade , flavor );        
+      dataset.addValue( 6.92 , marmelade , aroma );        
+      dataset.addValue( 8.67 , marmelade , sweetness ); 
+
+      dataset.addValue( 7.42 , limu , flavor );        
+      dataset.addValue( 7.14 , limu , aroma );        
+      dataset.addValue( 8.67 , limu , sweetness ); 
 
       return dataset; 
    }
    
    public static void main( String[ ] args ) {
-    BarChartExample chart = new BarChartExample("Car Usage Statistics", 
-         "Which car do you like?");
+    BarChartExample chart = new BarChartExample("Coffee Ratings", 
+         "Which coffee do you like?");
       chart.pack( );        
       RefineryUtilities.centerFrameOnScreen( chart );        
       chart.setVisible( true ); 
